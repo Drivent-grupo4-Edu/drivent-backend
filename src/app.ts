@@ -24,10 +24,10 @@ app
   .use(cors())
   .use(express.json())
   .get('/health', (_req, res) => res.send('OK!'))
-  .use('/users', usersRouter)
-  .use('/auth', authenticationRouter)
-  .use('/event', eventsRouter)
-  .use('/enrollments', enrollmentsRouter)
+  .use('/users', usersRouter) // Registro foi
+  .use('/auth', authenticationRouter) // Login foi
+  .use('/event', eventsRouter) // Evento foi
+  .use('/enrollments', enrollmentsRouter) //
   .use('/tickets', ticketsRouter)
   .use('/payments', paymentsRouter)
   .use('/hotels', hotelsRouter)
