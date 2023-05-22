@@ -1,4 +1,5 @@
 import Joi from 'joi';
+import bcrypt from 'bcrypt';
 import { CreateUserParams } from '@/services/users-service';
 
 export const createUserSchema = Joi.object<CreateUserParams>({
