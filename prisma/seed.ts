@@ -1,8 +1,9 @@
-import { PrismaClient } from '@prisma/client';
+import { Hotel, Prisma, PrismaClient, Room, User } from '@prisma/client';
 import dayjs from 'dayjs';
-const prisma = new PrismaClient();
-import { HOTEL_IMAGES_URLS_TEMPLATE } from './images/hotelImages';
 import bcrypt from 'bcrypt';
+import { HOTEL_IMAGES_URLS_TEMPLATE } from './urls/hotelImages';
+
+const prisma = new PrismaClient();
 
 async function main() {
   let event = await prisma.event.findFirst();
