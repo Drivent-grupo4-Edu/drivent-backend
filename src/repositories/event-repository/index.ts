@@ -1,4 +1,5 @@
-import { prisma, redis } from '@/config';
+import { prisma } from '@/config';
+import { redis } from '@/config/redis';
 
 async function findFirst() {
   const cacheKey = 'event';

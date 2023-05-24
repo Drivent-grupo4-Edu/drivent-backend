@@ -1,5 +1,6 @@
 import { Enrollment } from '@prisma/client';
 import { prisma } from '@/config';
+import { redis } from '@/config/redis';
 
 async function findWithAddressByUserId(userId: number) {
   return prisma.enrollment.findFirst({
