@@ -3,9 +3,10 @@ import { redis } from '@/config/redis';
 
 async function findFirst() {
   const cacheKey = 'event';
-  const cachedEvent = JSON.parse(await redis.get(cacheKey));
-  if (cachedEvent.id) {
-    const event = cachedEvent;
+  const cachedEvent = await redis.get(cacheKey);
+  if (cachedEvent) {
+    const event = JSON.parse(cachedEvent);
+
     return event;
   }
 
