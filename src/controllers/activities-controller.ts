@@ -22,3 +22,15 @@ export async function getActivitiesDate(req: AuthenticatedRequest, res: Response
     next(error);
   }
 }
+
+export async function usersSlots(req: AuthenticatedRequest, res: Response, next: NextFunction) {
+  const { userId }: { userId: number } = req;
+  const { activityId, slots }: { activityId: number; slots: number } = req.body;
+  try {
+    const userSlot = await activitiesService.usersSlots(userId, activityId, slots);
+
+    return res.status(httpStatus.OK).send(userSlot);
+  } catch (error) {
+    next(error);
+  }
+}
