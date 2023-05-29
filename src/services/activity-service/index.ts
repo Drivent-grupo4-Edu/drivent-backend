@@ -14,8 +14,16 @@ async function getActivities() {
   return activities;
 }
 
+async function getActivitiesDate() {
+  const activitiesDate = await activitiesRepository.getActivitiesDate();
+
+  if (!activitiesDate) throw notFoundError();
+  return activitiesDate;
+}
+
 const activitiesService = {
   getActivities,
+  getActivitiesDate,
 };
 
 export default activitiesService;

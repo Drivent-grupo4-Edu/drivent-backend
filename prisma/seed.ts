@@ -129,13 +129,14 @@ async function main() {
       const date = await prisma.activityDate.create({
         data: {
           weekDay: weekDays[i],
-          monthDay: Number(i),
+          monthDay: 2,
           month: months[i]
         },
       });
       activityDates.push(date);
     }
   }
+
 
   const activities = await prisma.activity.findMany();
 
@@ -148,12 +149,12 @@ async function main() {
     ]
 
     const activityNames = [
-      "Minecraft: a saga",
-      "Montando o pc ideal no lolzinho",
-      "Palestra sobre cultura",
-      "Discussão Java",
-      "Jogue RPGs",
-      "Aula de nataçao"
+      "Hudson comendo feijoada",
+      "Leo fazendo a janta",
+      "Lorena fugindo do estagio",
+      "Amigo estou aqui",
+      "Prisão Domiciliar",
+      "Vendo coca-lata semi usada"
     ]
 
     const dates = await prisma.activityDate.findMany();
