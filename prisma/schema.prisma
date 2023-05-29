@@ -143,3 +143,16 @@ model Teste {
   id    Int    @id @default(autoincrement())
   name  String
 }
+
+model Activites {
+  id            Int       @id @default(autoincrement())
+  activity_name String
+  day           DateTime
+  vacancies     Int
+  soldOff       Boolean
+  inicialHour   Int
+  finalHour     Int
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @default(now())
+  localID       Int
+}
